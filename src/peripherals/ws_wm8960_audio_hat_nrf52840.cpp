@@ -12,7 +12,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ==============================================================================*/
-
+#ifdef ARDUINO_ARDUINO_NANO33BLE
 #include "ws_wm8960_audio_hat_nrf52840.h"
 
 #include "i2c_arduino.h"
@@ -35,3 +35,5 @@ WS_WM8960_AudioHat_NRF52840::WS_WM8960_AudioHat_NRF52840()
                   WM8960::Instance(I2C_Arduino::Instance0())) {}
 
 }  // namespace peripherals
+
+#endif // ARDUINO_ARDUINO_NANO33BLE

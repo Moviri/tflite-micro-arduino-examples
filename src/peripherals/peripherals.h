@@ -53,8 +53,29 @@ constexpr pin_size_t kLED_DEFAULT_GPIO = D13;
 
 }  // namespace peripherals
 
-#else  // ARDUINO_ARDUINO_NANO33BLE
-#error "unsupported board"
+#else if defined(TARGET_NICLA_VISION) // ARDUINO_ARDUINO_NANO33BLE
+
+#include <cstdint>
+
+#include "button.h"
+#include "led.h"
+
+
+namespace peripherals {
+
+/*constexpr PinName kI2S_BIT_CLK = P0_8;   // D9
+constexpr PinName kI2S_LR_CLK = P0_9;     // D10
+constexpr PinName kI2S_DATA_IN = P0_10;   // D3
+constexpr PinName kI2S_DATA_OUT = P0_11;  // D2
+constexpr uint32_t kI2S_IRQ_PRIORITY = 7;
+*/
+constexpr uint32_t kI2C_CLOCK = 100000;
+
+constexpr pin_size_t kBUTTON_GPIO = 23;
+
+constexpr pin_size_t kLED_DEFAULT_GPIO = 24;
+
+}  // namespace peripherals
 
 #endif  // ARDUINO_ARDUINO_NANO33BLE
 

@@ -15,7 +15,7 @@ limitations under the License.
 
 #ifndef PERIPHERALS_I2S_NRF52840_H_
 #define PERIPHERALS_I2S_NRF52840_H_
-
+#ifdef ARDUINO_ARDUINO_NANO33BLE
 #include "audio_i2s.h"
 
 namespace peripherals {
@@ -82,5 +82,5 @@ class I2S_nrf52840 final : public IAudioI2S {
 };
 
 }  // namespace peripherals
-
+#endif // ARDUINO_ARDUINO_NANO33BLE
 #endif  // PERIPHERALS_I2S_NRF52840_H_

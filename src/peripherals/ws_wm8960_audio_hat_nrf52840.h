@@ -15,7 +15,7 @@ limitations under the License.
 
 #ifndef PERIPHERALS_WS_WM8960_AUDIO_HAT_NRF52840_H_
 #define PERIPHERALS_WS_WM8960_AUDIO_HAT_NRF52840_H_
-
+#ifdef ARDUINO_ARDUINO_NANO33BLE
 #include "audio_device.h"
 
 namespace peripherals {
@@ -31,5 +31,5 @@ class WS_WM8960_AudioHat_NRF52840 final : public AudioDevice {
 };
 
 }  // namespace peripherals
-
+#endif // ARDUINO_ARDUINO_NANO33BLE
 #endif  // PERIPHERALS_WS_WM8960_AUDIO_HAT_NRF52840_H_
